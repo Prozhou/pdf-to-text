@@ -1,0 +1,23 @@
+{
+  "name": "pdf-to-text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pdfToText.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefelewis/pdf-to-text.git"
+  },
+  "author": "Jeff Lewis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jefelewis/pdf-to-text/issues"
+  },
+  "homepage": "https://github.com/jefelewis/pdf-to-text#readme",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "pdf-parse": "^1.1.1"
+  }
+}
