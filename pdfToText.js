@@ -31,9 +31,8 @@ const pdfToText = async () => {
       return pdf.text;
     };
 
-    // PDF Text
+    // Extracted PDF Text
     const extractedText = await extractPDF(pdfData);
-
     await console.log(extractedText);
 
     // Text File (Output)
