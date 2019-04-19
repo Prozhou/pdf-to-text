@@ -17,16 +17,9 @@ const pdfToText = async () => {
     const dataBuffer = await fs.readFileSync(pdfFile);
     const pdfData = await pdf(dataBuffer);
 
-    // PDF Details
-    let pdfPages = null;
-    let pdfPagesRendered = null;
 
     // Extract PDF
     const extractPDF = (pdf) => {
-      // PDF Details
-      pdfPages = pdf.numpages;
-      pdfPagesRendered = pdf.numrender;
-  
       // PDF Text
       return pdf.text;
     };
@@ -40,11 +33,17 @@ const pdfToText = async () => {
       if (error) {
         return console.log(error);
       }
-      console.log('The text file was saved');
+      console.log('\nThe PDF has been converted to text and was saved.\n');
     });
+    
+    // PDF Pages Rendered/PDF Total Pages
+    console.log(`\nPDF Pages Rendered: ${pdfData.numrender}/${pdfData.numpages}\n`);
 
-    await console.log(`\nPDF Pages Rendered: ${pdfPagesRendered}/${pdfPages}\n`);
+    // PDF Info
+    console.log(pdfData.info);
 
+    // PDF Version
+    console.log(`PDF Version: ${pdfData.version}`);
   }
   catch (error) {
     console.log(error);
