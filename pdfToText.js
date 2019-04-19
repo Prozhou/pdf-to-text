@@ -17,7 +17,6 @@ const pdfToText = async () => {
     const dataBuffer = await fs.readFileSync(pdfFile);
     const pdfData = await pdf(dataBuffer);
 
-
     // Extract PDF
     const extractPDF = (pdf) => {
       // PDF Text
@@ -26,7 +25,7 @@ const pdfToText = async () => {
 
     // Extracted PDF Text
     const extractedText = await extractPDF(pdfData);
-    await console.log(extractedText);
+    console.log(extractedText);
 
     // Text File (Output)
     await fs.writeFile(`./output/convertedPDF_${month}.${day}.${year}.txt`, extractedText, 'utf8', (error) => {
@@ -50,4 +49,5 @@ const pdfToText = async () => {
   }
 }
 
+// Execute Function
 pdfToText();
